@@ -1,16 +1,16 @@
 <?php
 
-namespace Sven\:namespace\Tests;
+namespace Sven\LaravelIde\Tests;
 
-use Sven\:namespace\ServiceProvider;
+use Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider;
 use GrahamCampbell\TestBench\AbstractPackageTestCase;
+use Sven\LaravelIde\ServiceProvider;
 
 abstract class TestCase extends AbstractPackageTestCase
 {
     /**
-     * Get the service provider class.
-     *
      * @param \Illuminate\Contracts\Foundation\Application $app
+     *
      * @return string
      */
     protected function getServiceProviderClass($app)
@@ -19,18 +19,25 @@ abstract class TestCase extends AbstractPackageTestCase
     }
 
     /**
-     * Set up the testing suite.
+     * @param \Illuminate\Contracts\Foundation\Application $app
+     *
+     * @return string[]
      */
-    public function setUp()
+    protected function getRequiredServiceProviders($app)
     {
-        //
+        return [
+            ServiceProvider::class,
+            IdeHelperServiceProvider::class,
+        ];
     }
 
-    /**
-     * Tear down the testing suite.
-     */
+    public function setUp()
+    {
+        parent::setUp();
+    }
+
     public function tearDown()
     {
-        //
+        parent::tearDown();
     }
 }

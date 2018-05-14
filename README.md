@@ -1,6 +1,6 @@
-![:package](:hero)
+![laravel-ide](https://user-images.githubusercontent.com/11269635/39960173-33d80798-561e-11e8-9dcb-f6ee9cc55dd5.jpg)
 
-# :package
+# Laravel IDE
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Total Downloads][ico-downloads]][link-downloads]
@@ -8,15 +8,9 @@
 [![Build Status][ico-circleci]][link-circleci]
 [![StyleCI][ico-styleci]][link-styleci]
 
-Short description of the package. What does it do and why should people download
-it? Brag a bit but don't exaggerate. Talk about what's to come and tease small
-pieces of functionality.
-
-> :namespace
-> :package
-> :styleci
-> :hero
-
+This package provides a single command to quickly generate IDE helper files. It
+is really a thin wrapper around Barry van den Heuvel's
+[`laravel-ide-helper` package](https://github.com/barryvdh/laravel-ide-helper).
 
 ## Index
 - [Installation](#installation)
@@ -33,7 +27,7 @@ You'll have to follow a couple of simple steps to install this package.
 Via [composer](http://getcomposer.org):
 
 ```bash
-$ composer require sven/:package
+$ composer require sven/laravel-ide --dev
 ```
 
 Or add the package to your dependencies in `composer.json` and run
@@ -42,34 +36,26 @@ Or add the package to your dependencies in `composer.json` and run
 ```json
 {
     "require": {
-        "sven/:package": "*"
+        "sven/laravel-ide": "^1.0"
     }
 }
 ```
 
 
 ### Registering the service provider
-> Is this a Laravel package?
-
-Next, add the `ServiceProvider` to your `providers` array in `config/app.php`:
-
-```php
-'providers' => [
-    ...
-    Sven\:namespace\ServiceProvider::class,
-];
-```
-
-If you would like to load this package in certain environments only, take a look
-at [sven/env-providers](https://github.com/svenluijten/env-providers).
+Thanks to auto-discovery, the service provider is already registered. If you disabled
+auto-discovery in your project, you must register `\Sven\LaravelIde\ServiceProvider`
+while the app is in the `local` environment.
 
 ## Usage
-Some examples of the code. How should people use it, what options does this package
-provide? Should people be wary of some functionality?
+To (re-)generate IDE helper files, execute the following command:
 
-```php
-Maybe some code?
+```bash
+$ php artisan ide
 ```
+
+### Configuration
+
 
 ## Contributing
 All contributions (pull requests, issues and feature requests) are
@@ -77,16 +63,16 @@ welcome. Make sure to read through the [CONTRIBUTING.md](CONTRIBUTING.md) first,
 though. See the [contributors page](../../graphs/contributors) for all contributors.
 
 ## License
-`sven/:package` is licensed under the MIT License (MIT). Please see the
+`sven/laravel-ide` is licensed under the MIT License (MIT). Please see the
 [license file](LICENSE.md) for more information.
 
-[ico-version]: https://img.shields.io/packagist/v/sven/:package.svg?style=flat-square
+[ico-version]: https://img.shields.io/packagist/v/sven/laravel-ide.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-green.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/sven/:package.svg?style=flat-square
-[ico-circleci]: https://img.shields.io/circleci/project/github/svenluijten/:package.svg?style=flat-square
-[ico-styleci]: https://styleci.io/repos/:styleci/shield
+[ico-downloads]: https://img.shields.io/packagist/dt/sven/laravel-ide.svg?style=flat-square
+[ico-circleci]: https://img.shields.io/circleci/project/github/svenluijten/laravel-ide.svg?style=flat-square
+[ico-styleci]: https://styleci.io/repos/133169046/shield
 
-[link-packagist]: https://packagist.org/packages/sven/:package
-[link-downloads]: https://packagist.org/packages/sven/:package
-[link-circleci]: https://circleci.com/gh/svenluijten/:package
-[link-styleci]: https://styleci.io/repos/:styleci
+[link-packagist]: https://packagist.org/packages/sven/laravel-ide
+[link-downloads]: https://packagist.org/packages/sven/laravel-ide
+[link-circleci]: https://circleci.com/gh/svenluijten/laravel-ide
+[link-styleci]: https://styleci.io/repos/133169046

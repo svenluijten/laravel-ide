@@ -1,7 +1,7 @@
 {
-    "name": "sven/:package",
-    "description": "",
-    "keywords": [],
+    "name": "sven/laravel-ide",
+    "description": "Generate IDE helper files with one short command.",
+    "keywords": ["laravel", "phpstorm", "ide-helper", "laravel-ide-helper", "artisan", "ide"],
     "license": "MIT",
     "authors": [
         {
@@ -11,19 +11,21 @@
         }
     ],
     "require": {
-        "php": "^7.1"
+        "php": "^7.1",
+        "barryvdh/laravel-ide-helper": "^2.4"
     },
     "require-dev": {
-        "graham-campbell/testbench": "^4.0"
+        "graham-campbell/testbench": "^4.0",
+        "mockery/mockery": "^1.1"
     },
     "autoload": {
         "psr-4": {
-            "Sven\\:namespace\\": "src/"
+            "Sven\\LaravelIde\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Sven\\:namespace\\Tests\\": "tests/"
+            "Sven\\LaravelIde\\Tests\\": "tests/"
         }
     },
     "config": {
@@ -32,11 +34,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Sven\\:namespace\\ServiceProvider"
-            ],
-            "aliases": {
-                ":namespace": "Sven\\:namespace\\Facades\\:namespace"
-            }
+                "Sven\\LaravelIde\\ServiceProvider"
+            ]
         }
     }
 }
