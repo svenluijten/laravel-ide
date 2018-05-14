@@ -14,8 +14,6 @@ class ServiceProvider extends LaravelProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/ide.php', 'ide');
-
         $this->commands(IdeCommand::class);
     }
 }

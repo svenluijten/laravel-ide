@@ -23,11 +23,6 @@
             "Sven\\LaravelIde\\": "src/"
         }
     },
-    "autoload-dev": {
-        "psr-4": {
-            "Sven\\LaravelIde\\Tests\\": "tests/"
-        }
-    },
     "config": {
         "sort-packages": true
     },

@@ -8,9 +8,11 @@
 [![Build Status][ico-circleci]][link-circleci]
 [![StyleCI][ico-styleci]][link-styleci]
 
-This package provides a single command to quickly generate IDE helper files. It
-is really a thin wrapper around Barry van den Heuvel's
-[`laravel-ide-helper` package](https://github.com/barryvdh/laravel-ide-helper).
+This package provides a single command to quickly generate IDE helper files. I
+grew tired of remembering the 3 or 4 commands it took me to generate the helper
+files with Barry van den Heuvel's [`laravel-ide-helper` package](https://github.com/barryvdh/laravel-ide-helper)
+package, so I wrote my own command. Eventually though, I kept copying and pasting
+that same command in all my projects. And thus, this package was born.
 
 ## Index
 - [Installation](#installation)
@@ -35,7 +37,7 @@ Or add the package to your dependencies in `composer.json` and run
 
 ```json
 {
-    "require": {
+    "require-dev": {
         "sven/laravel-ide": "^1.0"
     }
 }
@@ -53,9 +55,6 @@ To (re-)generate IDE helper files, execute the following command:
 ```bash
 $ php artisan ide
 ```
-
-### Configuration
-
 
 ## Contributing
 All contributions (pull requests, issues and feature requests) are
