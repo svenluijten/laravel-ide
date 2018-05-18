@@ -14,10 +14,6 @@
         "php": "^7.1",
         "barryvdh/laravel-ide-helper": "^2.4"
     },
-    "require-dev": {
-        "graham-campbell/testbench": "^4.0",
-        "mockery/mockery": "^1.1"
-    },
     "autoload": {
         "psr-4": {
             "Sven\\LaravelIde\\": "src/"
