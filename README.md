@@ -18,6 +18,7 @@ that same command in all my projects. And thus, this package was born.
   - [Downloading](#downloading)
   - [Registering the service provider](#registering-the-service-provider)
 - [Usage](#usage)
+- [Configuration](#configuration)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -54,6 +55,24 @@ To (re-)generate IDE helper files, execute the following command:
 ```bash
 $ php artisan ide
 ```
+
+## Configuration
+To publish the configuration file for this package, run the following command:
+
+```bash
+$ php artisan vendor:publish --provider="Sven\LaravelIde\ServiceProvider"
+```
+
+This will create a new file at `config/ide.php`, where you can configure the following
+values:
+
+### `write_to_model_files`
+This option is to determine whether or not to write the generated docblocks for models
+directly to the model files or to create a seperate file for them.
+
+### `commands.*`
+The keys here stand for the `ide-helper` command to execute. If you wish to disable one
+of them, set the value to `false`.
 
 ## Contributing
 All contributions (pull requests, issues and feature requests) are

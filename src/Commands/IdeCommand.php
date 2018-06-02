@@ -22,9 +22,6 @@ class IdeCommand extends Command
      */
     protected $config;
 
-    /**
-     * @param \Illuminate\Config\Repository $config
-     */
     public function __construct(Config $config)
     {
         $this->config = $config;
@@ -34,11 +31,24 @@ class IdeCommand extends Command
 
     public function handle(): void
     {
-        $this->callSilent('ide-helper:generate');
-        $this->callSilent('ide-helper:models', $this->getWriteConfiguration());
-        $this->callSilent('ide-helper:meta');
+        if (!\in_array(true, $this->config->get('ide.commands'), true)) {
+            $this->error('None of the commands to run are enabled in the config.');
+
+            exit(1);
+        }
+
+        $this->callIf('ide.commands.generate', 'ide-helper:generate');
+        $this->callIf('ide.commands.models', 'ide-helper:models', $this->getWriteConfiguration());
+        $this->callIf('ide.commands.meta', 'ide-helper:meta');
 
         $this->info('Successfully generated PhpStorm meta files!');
+    }
+
+    protected function callIf($config, $command, array $parameters = []): void
+    {
+        if ($this->config->get($config)) {
+            $this->callSilent($command, $parameters);
+        }
     }
 
     protected function getWriteConfiguration(): array
