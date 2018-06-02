@@ -9,8 +9,8 @@
 
 This package provides a single command to quickly generate IDE helper files. I
 grew tired of remembering the 3 or 4 commands it took me to generate the helper
-files with Barry van den Heuvel's [`laravel-ide-helper` package](https://github.com/barryvdh/laravel-ide-helper)
-package, so I wrote my own command. Eventually though, I kept copying and pasting
+files with Barry van den Heuvel's [`laravel-ide-helper` package](https://github.com/barryvdh/laravel-ide-helper),
+so I wrote my own command. Eventually though, I kept copying and pasting
 that same command in all my projects. And thus, this package was born.
 
 ## Index
