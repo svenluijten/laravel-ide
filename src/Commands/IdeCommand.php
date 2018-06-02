@@ -31,7 +31,7 @@ class IdeCommand extends Command
 
     public function handle(): void
     {
-        if (!\in_array(true, $this->config->get('ide.commands'), true)) {
+        if (! \in_array(true, $this->config->get('ide.commands'), true)) {
             $this->error('None of the commands to run are enabled in the config.');
 
             exit(1);
