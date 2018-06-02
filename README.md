@@ -67,12 +67,12 @@ This will create a new file at `config/ide.php`, where you can configure the fol
 values:
 
 ### `write_to_model_files`
-This option is to determine whether or not to write the generated docblocks for models
+This option is to determine whether to write the generated docblocks for models
 directly to the model files or to create a seperate file for them.
 
 ### `commands.*`
-The keys here stand for the `ide-helper` command to execute. If you wish to disable one
-of them, set the value to `false`.
+The keys here stand for the `ide-helper` command to execute. If you want to disable one
+of them, set its value to `false`.
 
 ## Contributing
 All contributions (pull requests, issues and feature requests) are
