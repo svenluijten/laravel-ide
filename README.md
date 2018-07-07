@@ -7,6 +7,8 @@
 [![Software License][ico-license]](LICENSE.md)
 [![StyleCI][ico-styleci]][link-styleci]
 
+> **Note:** This package is no longer maintained. Use [`sven/artisan-shortcuts`](https://github.com/svenluijten/artisan-shortcuts) instead.
+
 This package provides a single command to quickly generate IDE helper files. I
 grew tired of remembering the 3 or 4 commands it took me to generate the helper
 files with Barry van den Heuvel's [`laravel-ide-helper` package](https://github.com/barryvdh/laravel-ide-helper),
